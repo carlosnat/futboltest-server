@@ -4,7 +4,7 @@ const app = express()
 app.use(cors())
 const port = 3000
 
-let server = app.listen(port, () => {
+let server = app.listen(process.env.PORT || port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
