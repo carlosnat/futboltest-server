@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 app.use(cors())
-const port = 3000
+const port = 3030
 
 let server = app.listen(process.env.PORT || port, () => {
     console.log(`Example app listening on port ${port}`)
@@ -46,6 +46,11 @@ io.on('connection', (socket) => {
     socket.on('timer', (msg) => {
         console.log(msg);
         io.emit('timer', msg);
+    });
+
+    socket.on('lineup', (msg) => {
+        console.log(msg);
+        io.emit('lineup', msg);
     });
 });
 
