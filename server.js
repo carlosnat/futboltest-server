@@ -57,6 +57,11 @@ io.on('connection', (socket) => {
         console.log(msg);
         io.emit('camera', msg);
     });
+
+    socket.on('scene', (msg) => {
+        console.log(msg);
+        io.emit('scene', msg);
+    });
 });
 
 app.use(function (request, response, next) {
